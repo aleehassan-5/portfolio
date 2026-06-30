@@ -27,7 +27,8 @@ const PROJECTS = [
       'A conversion-optimised marketplace with cart management, wishlists, category filters, and a clean checkout flow. Designed for real purchasing decisions with a strong product UX.',
     tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Tailwind CSS'],
     links: [
-      { label: 'GitHub', icon: Github, href: 'https://github.com/syntralogic', primary: true },
+      { label: 'Live Demo', icon: ExternalLink, href: 'https://shopire-frontend.vercel.app', primary: true },
+      { label: 'GitHub', icon: Github, href: 'https://github.com/syntralogic', primary: false },
     ],
     featured: false,
     category: 'Full Stack',
