@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { font-family: 'Inter', sans-serif; }
+}
+
+@layer utilities {
+  /* ── Gold accent text ── */
+  .accent-text {
+    color: var(--primary);
+  }
+
+  /* ── Syne display headings ── */
+  .font-syne { font-family: 'Syne', sans-serif; }
+  .font-mono-custom { font-family: 'JetBrains Mono', monospace; }
+
+  /* ── Underline link — editorial style ── */
+  .link-underline {
+    position: relative;
+    display: inline-block;
+  }
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  .link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* ── Hairline card ── */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border2);
+    border-radius: 12px;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  }
+  .card:hover {
+    background: var(--card-hover);
+    border-color: var(--border);
+  }
+
+  /* ── Brass border accent ── */
+  .card-accent {
+    border: 1px solid var(--border2);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-accent::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--primary) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .card-accent:hover::before { opacity: 1; }
+
+  /* ── Primary button ── */
+  .btn-primary {
+    background: var(--primary);
+    color: #0C0C0E;
+    font-weight: 600;
+    border: none;
+    transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(201,169,110,0.35);
+  }
+
+  /* ── Ghost button ── */
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--border2);
+    transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .btn-ghost:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+  }
+
+  /* ── Section label pill ── */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+    color: var(--primary);
+    background: var(--glow);
+  }
+
+  /* ── Section padding ── */
+  .section-padding {
+    @apply py-24 px-4 sm:px-6 lg:px-8;
+  }
+
+  /* ── Tag badge ── */
+  .tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    background: var(--card);
+    border: 1px solid var(--border2);
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* ── Number display ── */
+  .stat-number {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+  }
+
+  /* ── Divider line ── */
+  .hairline {
+    border: none;
+    border-top: 1px solid var(--border2);
+  }
+}
+
+/* ── Ambient grid bg ── */
+.dot-grid {
+  background-image: radial-gradient(circle, var(--border2) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+/* ── Noise texture overlay ── */
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* ── Marquee ── */
+@keyframes marquee-slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  animation: marquee-slide 40s linear infinite;
+  will-change: transform;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ── Float ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+.float { animation: float 6s ease-in-out infinite; }
+
+/* ── Blob morph ── */
+@keyframes blob-morph {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50%       { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+.blob { animation: blob-morph 12s ease-in-out infinite; }
+.blob-2 { animation-delay: -4s; animation-duration: 15s; }
+.blob-3 { animation-delay: -8s; animation-duration: 18s; }
+
+/* ── Cursor blink ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.cursor-blink { animation: blink 1s step-end infinite; }
+
+/* ── Progress bar fill ── */
+@keyframes progress-fill {
+  from { width: 0; }
+}
+
+/* ── Fade up ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Scrollbar ── */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Reduce motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .blob, .marquee-track, .float { animation: none !important; }
+}

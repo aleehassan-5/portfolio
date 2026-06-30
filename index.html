@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Muhammad Ali Hassan — Full Stack Developer & Cybersecurity Enthusiast building modern web applications, responsive interfaces, and Python-powered security tools." />
+    <meta name="keywords" content="Muhammad Ali Hassan, Full Stack Developer, Frontend Developer, React Developer, Python, Cybersecurity, Web Development" />
+    <meta name="author" content="Muhammad Ali Hassan" />
+    <meta property="og:title" content="Muhammad Ali Hassan — Full Stack Developer & Cybersecurity Enthusiast" />
+    <meta property="og:description" content="Full Stack Developer building modern web applications, responsive interfaces and cybersecurity utilities." />
+    <meta property="og:type" content="website" />
+    <title>Muhammad Ali Hassan — Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        /* Dark mode — cinematic charcoal with warm brass accent */
+        --bg:        #0C0C0E;
+        --bg2:       #111114;
+        --card:      rgba(255,255,255,0.04);
+        --card-hover:rgba(255,255,255,0.07);
+        --primary:   #C9A96E;   /* warm brass gold */
+        --primary-dim:#C9A96E55;
+        --ink:       #EDEAE3;   /* warm white */
+        --muted:     #7A7770;
+        --muted2:    #555250;
+        --border:    rgba(201,169,110,0.12);
+        --border2:   rgba(255,255,255,0.06);
+        --glass:     rgba(12,12,14,0.85);
+        --shadow:    rgba(0,0,0,0.6);
+        --glow:      rgba(201,169,110,0.15);
+      }
+      html.light {
+        --bg:        #F9F7F4;
+        --bg2:       #F1EEE9;
+        --card:      rgba(255,255,255,0.85);
+        --card-hover:rgba(255,255,255,0.95);
+        --ink:       #1A1816;
+        --muted:     #6B6560;
+        --muted2:    #999390;
+        --border:    rgba(0,0,0,0.08);
+        --border2:   rgba(0,0,0,0.05);
+        --glass:     rgba(249,247,244,0.9);
+        --shadow:    rgba(0,0,0,0.12);
+        --glow:      rgba(201,169,110,0.12);
+      }
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+        transition: background 0.4s ease, color 0.4s ease;
+        -webkit-font-smoothing: antialiased;
+      }
+      ::-webkit-scrollbar { width: 3px; }
+      ::-webkit-scrollbar-track { background: var(--bg); }
+      ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 2px; }
+      ::selection { background: var(--primary); color: #0C0C0E; }
+      :focus-visible { outline: 1.5px solid var(--primary); outline-offset: 3px; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
