@@ -6,9 +6,8 @@ import CountUp from 'react-countup'
 import { useInView } from 'react-intersection-observer'
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
 
-// ── Real photo (base64 placeholder — replace src with actual img import or URL)
-// Using the uploaded photo as external URL. In production, move to src/assets/
-const PHOTO_URL = '/src/assets/ali-hassan.jpg'
+// ── Real photo, properly imported so Vite bundles it for production builds
+import PHOTO_URL from '../assets/ali-hassan.jpg'
 
 const STATS = [
   { value: 20, suffix: '+', label: 'Projects' },

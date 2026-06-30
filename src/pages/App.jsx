@@ -1,6 +1,5 @@
 import React from 'react'
 import { useTheme } from '../hooks/useTheme'
-import { useLenis } from '../hooks/useLenis'
 import { useMouseGlow } from '../hooks/useMouseGlow'
 
 import AnimatedBackground from '../components/AnimatedBackground'
@@ -15,7 +14,6 @@ import Footer     from '../components/Footer'
 
 export default function App() {
   const { theme, toggleTheme } = useTheme()
-  useLenis()
   useMouseGlow()
 
   return (
